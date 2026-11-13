@@ -380,15 +380,15 @@ public void reveal(){
     
     for (int row = 0; row < pixels.length;row++)
     {
-      for (int col = 0; col < pixels[0].length-1; col++)
+      for (int col = 0; col < pixels[0].length; col++)
       {
         leftPixel = pixels[row][col];   
         
         leftColor = leftPixel.getColor();
       
-        leftPixel.setColor(new Color(HIGH_FILTER * (leftColor.getRed() % LOW_FILTER),
-               HIGH_FILTER * (leftColor.getGreen() % LOW_FILTER),
-               HIGH_FILTER * (leftColor.getBlue() % LOW_FILTER)));
+        leftPixel.setColor(new Color( leftColor.getRed(),
+                leftColor.getGreen(),
+                leftColor.getBlue()));
         
     }
     
