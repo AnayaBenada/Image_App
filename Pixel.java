@@ -208,7 +208,7 @@ public class Pixel
     // get the blue value (starts at 0 so no shift required)
     int blue = value & 0xff;
     
-    return new Color(red,green,blue);
+    return new Color(green,blue,red); //*******************************
   }
   
   /**
@@ -267,7 +267,7 @@ public class Pixel
     int red = correctValue(value);
     
     // update the pixel value in the picture
-    updatePicture(getAlpha(), red, getGreen(), getBlue());
+    updatePicture(getAlpha(), 250 -red, getGreen(), getBlue());
   } 
   
   /**
@@ -280,7 +280,8 @@ public class Pixel
     int green = correctValue(value);
     
     // update the pixel value in the picture
-    updatePicture(getAlpha(), getRed(), green, getBlue());
+    updatePicture(getAlpha(), getRed(), 
+    250-green, getBlue());
   } 
   
   /**
@@ -293,7 +294,7 @@ public class Pixel
     int blue = correctValue(value);
     
     // update the pixel value in the picture
-    updatePicture(getAlpha(), getRed(), getGreen(), blue);
+    updatePicture(getAlpha(), getRed(), getGreen(), 250-blue);
   } 
   
    /**
