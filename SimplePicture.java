@@ -350,13 +350,19 @@ public class SimplePicture implements DigitalPicture
  {
    int width = getWidth();
    int height = getHeight();
+   
+   int maxColumn = width - 1;
+   int maxRow = height - 1;
+   
    Pixel[][] pixelArray = new Pixel[height][width];
    
    // loop through height rows from top to bottom
    for (int row = 0; row < height; row++) 
-     for (int col = 0; col < width; col++) 
+     for (int col = 0; col < width; col++) {
        pixelArray[row][col] = new Pixel(this,col,row);
+     }
     
+     
    return pixelArray;
  }
  
